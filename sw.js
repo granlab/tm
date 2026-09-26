@@ -1,5 +1,5 @@
 // offline cache: network first (4 s), cache fallback. Caches only same-origin GETs of this static site.
-const C = "tm-muhhhdkn";
+const C = "tm-muhroz6j";
 self.addEventListener("install", e => { e.waitUntil(caches.open(C).then(c => c.addAll(["./", "./probe/"])).catch(() => {}).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== C).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {
